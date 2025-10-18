@@ -11,6 +11,8 @@ class ArrayQueue : public Queue<T> {
         // an array that contains the elements
         T* buffer;
 
+        int length;
+
         // the maximum number of elements in the queue
         int maxSize;
 
@@ -20,10 +22,12 @@ class ArrayQueue : public Queue<T> {
         // the current position of the back element in the queue
         int backIndex;
 
-        // copy the values from the argument queue to `this`
-        void copy(const ArrayQueue<T>&);
+        
 
     public:
+
+    // copy the values from the argument queue to `this`
+        void copy(const ArrayQueue<T>&);
         // constructor with the maximum size as the argument
         ArrayQueue(int = 100);
 
@@ -41,6 +45,9 @@ class ArrayQueue : public Queue<T> {
 
         // remove all elements in the queue, resetting to the initial state
         virtual void clear() override;
+
+        //I added this function, it just displays the array
+        virtual void display();
 
         // remove the front element from the queue
         virtual void dequeue() override;
